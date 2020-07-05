@@ -1,0 +1,17 @@
+
+<form  #loginForm="ngForm">
+    <h3>Login Form</h3>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type=text name="email" matInput ngModel required>
+        
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Input</mat-label>
+        <input type="password" name="password"  matInput ngModel required>
+      </mat-form-field><br>
+
+    
+      <button   color="primary" (click)="onLogin(loginForm)" type="submit" mat-button  mat-raised-button>Login</button>
+      <a  routerLink="register" mat-button>Register</a>
+</form>

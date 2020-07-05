@@ -1,0 +1,35 @@
+<table mat-table>
+    <tr>
+        <th >
+            FirstName
+        </th>
+        <th>
+            LastName
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>
+             Delete Action
+        </th>
+        <th>
+            Update Action
+       </th>
+
+    </tr>
+    <tr *ngFor="let user of allusers">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.gender}}</td>
+        <td>
+            <mat-icon  (click)="deleteUser(user)" svgIcon="delete" ></mat-icon>
+            <!-- <button (click)="deleteUser(user)" mat-button   mat-raised-button color="warn">Delete</button></td> -->
+        <td>
+            <mat-icon  (click)="updateUser(user)" svgIcon="edit" ></mat-icon>
+            </td>
+    </tr>
+</table>

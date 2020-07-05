@@ -1,0 +1,38 @@
+
+
+
+<form  #registerForm="ngForm">
+    <h3>Registration Form</h3>
+    <mat-form-field appearance="fill">
+         <mat-label>Email</mat-label>
+         <input  name="email" type=text matInput required ngModel > 
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input  name="firstName" type=text matInput required ngModel > 
+     </mat-form-field><br>
+     <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input  name="lastName" type=text matInput required ngModel > 
+
+     </mat-form-field><br>
+      <mat-form-field appearance="fill">
+             <mat-label>Password</mat-label>
+             <input name="password"type="password" matInput ngModel required>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+            <mat-label>Confirm Pasword</mat-label>
+            <input  name ="confirmPassword" type="password" ngModel matInput required >
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <mat-select name="gender" ngModel>
+          <mat-option value="Male">Male</mat-option>
+           <mat-option value="Male">Female</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <button  type="button" (click)="RegisterClick(registerForm)" mat-button>Register</button>
+</form>

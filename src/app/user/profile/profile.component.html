@@ -1,0 +1,30 @@
+<h3 *ngIf="!updateMode">Welcome ! {{user.firstName}}</h3>
+<h3 *ngIf="updateMode">Please modify below Details Except Email. Email is not ment to be changed</h3>
+<form  #profileForm="ngForm">
+
+    <mat-form-field appearance="fill">
+         <mat-label>Email</mat-label>
+         <input  name="email" type=text matInput required [(ngModel)]="email" [readonly]="updateMode"> 
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input  name="firstName" type=text matInput required ngModel [(ngModel)]="firstName"  > 
+     </mat-form-field><br>
+     <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input  name="lastName" type=text matInput required ngModel [(ngModel)]="lastName"  > 
+        
+     </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <mat-select name="gender" [(ngModel)]="gender"  >
+          <mat-option value="Male">Male</mat-option>
+           <mat-option value="Male">Female</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+      <button  type="button"  color="primary" (click)="saveClick(profileForm)" *ngIf="!updateMode"  mat-button mat-raised-button>Add</button>
+      <button  type="button" color="primary" (click)="updateClick(profileForm)" *ngIf="updateMode"  mat-button mat-raised-button>Update</button>
+      <a  routerLink="/View-Users" mat-button>View Users</a>
+</form>
